@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Missão Brasil Online – Quiz de Geografia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topo">
+    <h1 class="titulo">🌎 Missão Brasil</h1>
+    <p class="subtitulo">Quiz de Geografia · jogue com a turma!</p>
+  </header>
+
+  <main class="palco">
+    <!-- ENTRADA -->
+    <section id="tela-entrada" class="tela ativa">
+      <p class="fala">Escolha seu bichinho 👇</p>
+      <div id="avatares" class="avatares"></div>
+      <input id="campo-nome" class="campo" type="text" maxlength="12" placeholder="✏️ Seu nome" autocomplete="off">
+      <button id="btn-criar" class="botao grande">➕ Criar sala</button>
+      <div class="ou">ou entre em uma sala</div>
+      <div class="linha-codigo">
+        <input id="campo-codigo" class="campo codigo" type="text" maxlength="4" placeholder="🔑 ABCD" autocomplete="off">
+        <button id="btn-entrar" class="botao laranja">🚪 Entrar</button>
+      </div>
+      <p id="erro-entrada" class="feedback erro" role="alert"></p>
+    </section>
+
+    <!-- SALA DE ESPERA -->
+    <section id="tela-lobby" class="tela">
+      <p class="fala">Código da sala</p>
+      <div id="codigo-sala" class="codigo-sala">----</div>
+      <ul id="lista-jogadores" class="lista-jogadores" aria-label="Jogadores na sala"></ul>
+      <button id="btn-comecar" class="botao grande">▶ Começar</button>
+      <p id="msg-espera" class="fala">⏳ Esperando o jogo começar...</p>
+    </section>
+
+    <!-- JOGO -->
+    <section id="tela-jogo" class="tela">
+      <div class="painel">
+        <div class="progresso" id="progresso">1/10</div>
+        <div class="pontos">⭐ <span id="pontos">0</span></div>
+      </div>
+      <div class="tempo"><div id="barra-tempo" class="barra-tempo"></div></div>
+      <div class="cartao-pergunta">
+        <div id="icone" class="icone" aria-hidden="true">🧭</div>
+        <h2 id="pergunta" class="pergunta">Pergunta</h2>
+      </div>
+      <div id="opcoes" class="opcoes"></div>
+      <p id="feedback" class="feedback" role="status" aria-live="polite"></p>
+      <ol id="mini-ranking" class="mini-ranking" aria-label="Ranking ao vivo"></ol>
+    </section>
+
+    <!-- FINAL / PÓDIO -->
+    <section id="tela-fim" class="tela">
+      <h2 id="fim-titulo" class="fim-titulo">🏆 Pódio</h2>
+      <div id="podio" class="podio"></div>
+      <ol id="resto-ranking" class="resto-ranking"></ol>
+      <p id="fim-status" class="fala"></p>
+      <button id="btn-reiniciar" class="botao grande">🔄 Jogar de novo</button>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <p>Feito com 💚 para aprender Geografia</p>
+  </footer>
+
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
